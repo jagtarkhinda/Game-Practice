@@ -15,6 +15,9 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         
+        //adding physics body around scene itself
+        self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
+        
     }
     
     //function to make orange
