@@ -58,8 +58,20 @@ class GameScene: SKScene {
         //checking the x position
         print(mousePosition!.x)
         
-        //make orange on mouse position
-        self.makeOrange(xPosition: mousePosition!.x, yPosition: mousePosition!.y)
+        //make orange only when user clicks on tree
+        
+            //first check on what sprite the use clicks
+        let spriteTouched = self.atPoint(mousePosition!)
+        
+            //now check if the touched sprite is tree
+        if(spriteTouched.name == "tree")
+        {
+            //make orange on mouse position
+            self.makeOrange(xPosition: mousePosition!.x, yPosition: mousePosition!.y)
+        }
+        
+        
+       
         
     }
     
