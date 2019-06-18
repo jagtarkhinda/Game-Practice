@@ -37,6 +37,10 @@ class GameScene: SKScene {
         //4. Add Orange to the scene
         addChild(orange)
         
+        //throwing an orange to some direction by using impulse
+        let throwOrange = SKAction.applyImpulse(CGVector(dx:50,dy:100), duration: 0.5)
+        orange.run(throwOrange)
+        
     }
     
     
