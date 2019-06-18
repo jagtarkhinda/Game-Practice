@@ -25,7 +25,7 @@ class GameScene: SKScene {
     //---------------------
     
     //function to make orange
-    func makeOrange(xPosition:CGFloat, yPosition:CGFloat)
+    func makeOrange(xPosition:CGFloat, yPosition:CGFloat,throwX:CGFloat,throwY:CGFloat)
     {
         //1. creating image sprite
         let orange = SKSpriteNode(imageNamed: "Orange")
@@ -42,7 +42,7 @@ class GameScene: SKScene {
         addChild(orange)
         
         //throwing an orange to some direction by using impulse
-        let throwOrange = SKAction.applyImpulse(CGVector(dx:50,dy:40), duration: 0.5)
+        let throwOrange = SKAction.applyImpulse(CGVector(dx:throwX,dy:throwY), duration: 0.5)
         orange.run(throwOrange)
         
     }
@@ -94,8 +94,15 @@ class GameScene: SKScene {
         //getting the mouse position on tap release
         let mousePosition = touches.first?.location(in: self)
         
-        //make orange on mouse position
-        self.makeOrange(xPosition: mousePosition!.x, yPosition: mousePosition!.y)
+        //gettin difference between strating and ending
+        let diffX = mousePosition!.x - mouseStratingPosition.x
+        let diffY = mousePosition!.y - mouseStratingPosition.y
+        
+        //make orange at mouse position and throw it in correct direction
+      
+        self.makeOrange(xPosition: mouseStratingPosition.x, yPosition: mouseStratingPosition.y,throwX: diffX,throwY: diffY)
+            
+        
     
 }
 }
