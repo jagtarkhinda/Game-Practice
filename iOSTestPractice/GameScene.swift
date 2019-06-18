@@ -20,6 +20,10 @@ class GameScene: SKScene {
         
     }
     
+    //---------------------
+    // CUSTOM FUNCTIONS
+    //---------------------
+    
     //function to make orange
     func makeOrange(xPosition:CGFloat, yPosition:CGFloat)
     {
@@ -44,10 +48,17 @@ class GameScene: SKScene {
     }
     
     
+    //---------------------
+    // UPDATE FUNCTION
+    //---------------------
+    
     override func update(_ currentTime: TimeInterval) {
         
     }
     
+    //---------------------
+    // TOUCH FUNCTION
+    //---------------------
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         
@@ -61,14 +72,14 @@ class GameScene: SKScene {
         //make orange only when user clicks on tree
         
             //first check on what sprite the use clicks
-        let spriteTouched = self.atPoint(mousePosition!)
+            let spriteTouched = self.atPoint(mousePosition!)
         
             //now check if the touched sprite is tree
-        if(spriteTouched.name == "tree")
-        {
-            //make orange on mouse position
-            self.makeOrange(xPosition: mousePosition!.x, yPosition: mousePosition!.y)
-        }
+            if(spriteTouched.name == "tree")
+            {
+                //make orange on mouse position
+                self.makeOrange(xPosition: mousePosition!.x, yPosition: mousePosition!.y)
+            }
         
         
        
