@@ -21,14 +21,17 @@ class GameScene: SKScene {
     func makeOrange(xPosition:CGFloat, yPosition:CGFloat)
     {
         //1. creating image sprite
-        let orange = SKSpriteNode(imageNamed: "orange")
+        let orange = SKSpriteNode(imageNamed: "Orange")
         
         //2. set initial position of orange where mouse is clicked
+        orange.position.x = xPosition
+        orange.position.y = yPosition
         
         //3. set physics for orange
         //dynamics and gravity are true by default
         
         //4. Add Orange to the scene
+        addChild(orange)
         
     }
     
@@ -39,14 +42,16 @@ class GameScene: SKScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        //make orange
-        self.makeOrange(xPosition: <#T##CGFloat#>, yPosition: <#T##CGFloat#>)
         
-        //getting the mouse location on tap
+        
+        //getting the mouse position on tap
         let mousePosition = touches.first?.location(in: self)
         
         //checking the x position
         print(mousePosition!.x)
+        
+        //make orange on mouse position
+        self.makeOrange(xPosition: mousePosition!.x, yPosition: mousePosition!.y)
         
     }
     
