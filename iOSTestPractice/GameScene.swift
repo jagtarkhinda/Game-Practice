@@ -42,7 +42,7 @@ class GameScene: SKScene {
         addChild(orange)
         
         //throwing an orange to some direction by using impulse
-        let throwOrange = SKAction.applyImpulse(CGVector(dx:50,dy:100), duration: 0.5)
+        let throwOrange = SKAction.applyImpulse(CGVector(dx:50,dy:40), duration: 0.5)
         orange.run(throwOrange)
         
     }
@@ -59,11 +59,16 @@ class GameScene: SKScene {
     //---------------------
     // TOUCH FUNCTION
     //---------------------
+    
+    //variable to store initial mouse position
+    var mouseStratingPosition:CGPoint = CGPoint(x:0,y:0)
+    
+    //this function gets the posisiton of tap down
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         
         
-        //getting the mouse position on tap
+        //getting the mouse position on tap down
         let mousePosition = touches.first?.location(in: self)
         
         //checking the x position
@@ -77,13 +82,20 @@ class GameScene: SKScene {
             //now check if the touched sprite is tree
             if(spriteTouched.name == "tree")
             {
-                //make orange on mouse position
-                self.makeOrange(xPosition: mousePosition!.x, yPosition: mousePosition!.y)
+                //getting the initial mouse position only when person taps the tree
+                self.mouseStratingPosition = mousePosition!
             }
-        
-        
-       
         
     }
     
+    //getting the mouse position on tap release
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        //getting the mouse position on tap release
+        let mousePosition = touches.first?.location(in: self)
+        
+        //make orange on mouse position
+        self.makeOrange(xPosition: mousePosition!.x, yPosition: mousePosition!.y)
+    
+}
 }
