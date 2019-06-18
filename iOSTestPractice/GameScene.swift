@@ -16,4 +16,18 @@ class GameScene: SKScene {
     }
     
     
+    override func update(_ currentTime: TimeInterval) {
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        //getting the mouse location on tap
+        let mousePosition = touches.first?.location(in: self)
+        
+        //checking the x position
+        print(mousePosition!.x)
+        
+    }
+    
 }
