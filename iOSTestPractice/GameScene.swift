@@ -11,10 +11,14 @@ import GameplayKit
 class GameScene: SKScene {
     
     
+    var skull:SKNode?
+    var ground:SKNode?
     
     
     override func didMove(to view: SKView) {
         
+        self.skull = self.childNode(withName: "skull")
+        self.ground = self.childNode(withName: "ground")
         //adding physics body around scene itself
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
         
@@ -54,6 +58,18 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         
+        //checking when skull collides with the ground
+        if(skull!.intersects(ground!) == true)
+        {
+            print("SKULL HITS")
+            
+            let level2 = SKScene(fileNamed: "Scene2")
+            level2!.scaleMode = .aspectFill
+            let transition = SKTransition.flipVertical(withDuration: 2)
+
+            self.scene?.view?.presentScene(level2!, transition: transition)
+        }
+        
     }
     
     //---------------------
@@ -85,6 +101,9 @@ class GameScene: SKScene {
                 //getting the initial mouse position only when person taps the tree
                 self.mouseStratingPosition = mousePosition!
             }
+            else{
+                self.mouseStratingPosition = CGPoint(x:0,y:0)
+        }
         
     }
     
@@ -94,15 +113,15 @@ class GameScene: SKScene {
         //getting the mouse position on tap release
         let mousePosition = touches.first?.location(in: self)
         
-        //gettin difference between strating and ending
-        let diffX = mousePosition!.x - mouseStratingPosition.x
-        let diffY = mousePosition!.y - mouseStratingPosition.y
+        if(self.mouseStratingPosition.x != 0 && self.mouseStratingPosition.y != 0)
+        {
+            //gettin difference between strating and ending
+            let diffX = mousePosition!.x - mouseStratingPosition.x
+            let diffY = mousePosition!.y - mouseStratingPosition.y
         
         //make orange at mouse position and throw it in correct direction
       
         self.makeOrange(xPosition: mouseStratingPosition.x, yPosition: mouseStratingPosition.y,throwX: diffX,throwY: diffY)
-            
-        
     
-}
+        }}
 }

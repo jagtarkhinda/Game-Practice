@@ -17,6 +17,7 @@
 		9B11F81D22B96D0100797FE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B11F81B22B96D0100797FE4 /* LaunchScreen.storyboard */; };
 		9B11F82822B96D0100797FE4 /* iOSTestPracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B11F82722B96D0100797FE4 /* iOSTestPracticeTests.swift */; };
 		9B11F83322B96D0100797FE4 /* iOSTestPracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B11F83222B96D0100797FE4 /* iOSTestPracticeUITests.swift */; };
+		9B11F84122B98AF600797FE4 /* Scene2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9B11F84022B98AF600797FE4 /* Scene2.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		9B11F82E22B96D0100797FE4 /* iOSTestPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSTestPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B11F83222B96D0100797FE4 /* iOSTestPracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSTestPracticeUITests.swift; sourceTree = "<group>"; };
 		9B11F83422B96D0100797FE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B11F84022B98AF600797FE4 /* Scene2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scene2.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				9B11F81922B96D0100797FE4 /* Assets.xcassets */,
 				9B11F81B22B96D0100797FE4 /* LaunchScreen.storyboard */,
 				9B11F81E22B96D0100797FE4 /* Info.plist */,
+				9B11F84022B98AF600797FE4 /* Scene2.sks */,
 			);
 			path = iOSTestPractice;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				9B11F81822B96CFF00797FE4 /* Main.storyboard in Resources */,
 				9B11F80F22B96CFF00797FE4 /* GameScene.sks in Resources */,
 				9B11F81A22B96D0100797FE4 /* Assets.xcassets in Resources */,
+				9B11F84122B98AF600797FE4 /* Scene2.sks in Resources */,
 				9B11F81D22B96D0100797FE4 /* LaunchScreen.storyboard in Resources */,
 				9B11F81122B96CFF00797FE4 /* Actions.sks in Resources */,
 			);
