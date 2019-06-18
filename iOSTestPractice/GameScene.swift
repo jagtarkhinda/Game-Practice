@@ -29,6 +29,7 @@ class GameScene: SKScene {
         
         //3. set physics for orange
         //dynamics and gravity are true by default
+        orange.physicsBody = SKPhysicsBody(circleOfRadius: orange.size.width/2)
         
         //4. Add Orange to the scene
         addChild(orange)
